@@ -4,15 +4,6 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-# icons charging  ,  ,  ,  ,  , ,    
-#                100, 90, 80,  60,  40,  30,  20 %
-
-# icons normal  , ,  ,  ,  ,  ,  ,  ,  
-#             100,  90,  80, 70,  60,  50,  40,  20, 10 %
-
-# unfortunately there's a mismatch there are no more available charging icons, there are two that are duplicated in the variables
-# this requires a patched font (nerdfont)
-
 # script global variables
 icon_live_charge_tier8=''
 icon_live_charge_tier7=''
@@ -24,25 +15,23 @@ icon_live_charge_tier2=''
 icon_live_charge_tier1=''
 
 # script default variables
-icon_live_charge_tier8_default=''
-icon_live_charge_tier7_default=''
-icon_live_charge_tier6_default=''
-icon_live_charge_tier5_default=''
-icon_live_charge_tier4_default=''
-icon_live_charge_tier3_default=''
-icon_live_charge_tier2_default=''
-icon_live_charge_tier1_default=''
+icon_live_charge_tier8_default='󰁹 '
+icon_live_charge_tier7_default='󰂂 '
+icon_live_charge_tier6_default='󰂁 '
+icon_live_charge_tier5_default='󰂀 '
+icon_live_charge_tier4_default='󰁿 '
+icon_live_charge_tier3_default='󰁼 '
+icon_live_charge_tier2_default='󰁻 '
+icon_live_charge_tier1_default='󰂎 '
 
-icon_live_charge_tier8_charging=''
-icon_live_charge_tier7_charging=''
-icon_live_charge_tier6_charging=''
-icon_live_charge_tier5_charging=''
-icon_live_charge_tier4_charging=''
-icon_live_charge_tier3_charging=''
-icon_live_charge_tier2_charging=''
-icon_live_charge_tier1_charging=''
-
-
+icon_live_charge_tier8_charging='󰂅 '
+icon_live_charge_tier7_charging='󰂋 '
+icon_live_charge_tier6_charging='󰂊 '
+icon_live_charge_tier5_charging='󰂉 '
+icon_live_charge_tier4_charging='󰢝 '
+icon_live_charge_tier3_charging='󰂈 '
+icon_live_charge_tier2_charging='󰂇 '
+icon_live_charge_tier1_charging='󰢜 '
 
 # icons are set as script global variables
 get_icon_charge_settings() {
@@ -82,7 +71,7 @@ print_icon_charge_plus_status() {
 		elif [ $percentage -ge 20 ]; then
 			printf "$icon_live_charge_tier3_charging"
 
-		elif [ $percentage -gt 5 ]; then 
+		elif [ $percentage -gt 5 ]; then
 			printf "$icon_live_charge_tier2_charging"
 
 		else
@@ -110,7 +99,7 @@ print_icon_charge_plus_status() {
 		elif [ $percentage -ge 20 ]; then
 		    printf "$icon_live_charge_tier3"
 
-		elif [ $percentage -gt 5 ]; then 
+		elif [ $percentage -gt 5 ]; then
 		    printf "$icon_live_charge_tier2"
 
 		else
