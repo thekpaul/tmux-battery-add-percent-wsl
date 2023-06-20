@@ -6,8 +6,8 @@ source "$CURRENT_DIR/helpers.sh"
 
 print_icon() {
 	local status=$1
-	if [ "$status" == "discharging" ]; then
-		$CURRENT_DIR/battery_icon_charge.sh
+	if [[ $status =~ (discharging|charging|charged) ]]; then
+		$CURRENT_DIR/battery_icon_live.sh
 	else
 		$CURRENT_DIR/battery_icon_status.sh "$status"
 	fi
